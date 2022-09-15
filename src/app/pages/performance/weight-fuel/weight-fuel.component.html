@@ -1,0 +1,86 @@
+<div class="card mb-3">
+    <div class="card-header">Fuel Planing</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <app-number [(value)]="_flight.fuelTaxi" label="Taxi Fuel" [round]="100" [req]="true" [int]=true
+                    [sufixIcon]="'reset.svg'" (sufixClick)="_flight.resetFuelTaxi()">
+                </app-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <app-number [(value)]="_flight.fuelTrip" label="Trip Fuel" [round]="100" [tons]=true [req]="true"
+                [sufixIcon]="'reset.svg'" (sufixClick)="_flight.resetFuelTrip()">
+                </app-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <app-number [(value)]="_flight.fuelRamp" label="Ramp Fuel" [round]="100" [tons]=true [req]="true"
+                [sufixIcon]="'reset.svg'" (sufixClick)="_flight.resetFuelRamp()">
+                </app-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <app-number [value]="_flight.fuelCrewExtra" label="Crew Extra Fuel" [edit]="false"></app-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <app-number [(value)]="_flight.fuelFinalRamp" label="Required Fuel" [tons]=true [req]="true"
+                [sufixIcon]="'reset.svg'" (sufixClick)="_flight.resetFuelFinalRamp()">
+                </app-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <app-number [(value)]="_flight.fuelDeparture" label="Departure Fuel" [tons]=true [req]="true"
+                [sufixIcon]="'reset.svg'" (sufixClick)="_flight.resetFuelDeparture()">
+                </app-number>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-header">Weight Planing</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <app-number [int]=true [(value)]="_flight.mzfw" label="MZFW" [req]="true"></app-number>
+            </div>
+            <div class="col">
+                <app-number [int]=true [(value)]="_flight.mtow" label="MTOW" [req]="true"></app-number>
+            </div>
+            <div class="col">
+                <app-number [int]=true [(value)]="_flight.mlwt" label="MLWT" [req]="true"></app-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <app-number [(value)]="_flight.ezfw" label="EZFW" [tons]="true" [req]="true"></app-number>
+            </div>
+            <div class="col">
+                <app-number [value]="_flight.etow" label="ETOW" [edit]="false"></app-number>
+            </div>
+            <div class="col">
+                <app-number [value]="_flight.elwt" label="ELWT" [edit]="false"></app-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <app-number [value]="_flight.zfwMargin" [label]="zfwMarginLabel()" [edit]="false" [clickable]="false"
+                    [warning]="_flight.zfwMargin < 100"></app-number>
+            </div>
+            <div class="col">
+                <app-number [value]="_flight.towMargin" [label]="towMarginLabel()" [edit]="false" [clickable]="false"
+                    [caution]="_flight.towMargin < 1000" [warning]="_flight.towMargin < 500"></app-number>
+            </div>
+            <div class="col">
+                <app-number [value]="_flight.ldwMargin" [label]="ldgMarginLabel()" [edit]="false" [clickable]="false"
+                    [caution]="_flight.ldwMargin < 1000" [warning]="_flight.ldwMargin < 500"></app-number>
+            </div>
+        </div>
+    </div>
+</div>
